@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_details"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.admin.reportcard.Details">
+
+        <TextView
+            android:id="@+id/name_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Jane"
+            android:textSize="32sp"
+            android:padding="15dp"
+            android:layout_gravity="center_horizontal"
+            />
+
+        <TextView
+            android:id="@+id/surname_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Doe"
+            android:textSize="32sp"
+            android:padding="15dp"
+            android:layout_gravity="center_horizontal"
+            />
+
+        <TextView
+            android:id="@+id/email_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="janedoe@gmail.com"
+            android:textSize="32sp"
+            android:padding="15dp"
+            />
+
+        <TextView
+            android:id="@+id/test1_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Test 1"
+            android:textSize="32sp"
+            android:padding="15dp"
+            />
+
+        <TextView
+            android:id="@+id/test2_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Test 2"
+            android:textSize="32sp"
+            android:padding="15dp"
+            />
+
+        <TextView
+            android:id="@+id/assignment_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Assignment"
+            android:textSize="32sp"
+            android:padding="15dp"
+            />
+
+        <TextView
+            android:id="@+id/finalMark_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Final Mark"
+            android:textSize="32sp"
+            android:padding="15dp"
+            />
+
+</LinearLayout>
