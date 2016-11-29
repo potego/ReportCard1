@@ -8,11 +8,14 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.StrictMode;
 
+import static android.R.attr.name;
+
 /**
  * Created by admin on 2016/10/26.
  */
 
 public class DatabaseHelper extends SQLiteOpenHelper {
+    SQLiteDatabase myDb;
 
     public static final String REPORT_CARD = "Student.db";
     public static final String STUDENTS = "Student_table";
@@ -24,6 +27,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String col_6 = "TEST_2";
     public static final String col_7 = "ASSIGNMENT";
     public static final String col_8 = "FINAL_MARK";
+    public static final String col_9 = "PASSWORD";
     Cursor students_names;
 
 
@@ -36,7 +40,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table " + STUDENTS + " (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT, SURNAME TEXT, EMAIL TEXT, TEST_1 INTEGER, TEST_2 INTEGER, ASSIGNMENT INTEGER, FINAL_MARK INTEGER)");
+        db.execSQL("create table " + STUDENTS + " (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT not null, SURNAME TEXT not null, EMAIL TEXT not null, TEST_1 INTEGER not null, TEST_2 INTEGER not null, ASSIGNMENT INTEGER not null, FINAL_MARK INTEGER not null, PASSWORD INTEGER not null)");
 
     }
 
@@ -46,22 +50,48 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean insertData(String name, String surname, String email, String test1, String test2, String assignment, String final_mark) {
+    public boolean insertData(Contacts c/*String name, String surname, String email, String test1, String test2, String assignment, String final_mark, String password, String confirm_password*/) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(col_2, name);
-        contentValues.put(col_3, surname);
-        contentValues.put(col_4, email);
-        contentValues.put(col_5, test1);
-        contentValues.put(col_6, test2);
-        contentValues.put(col_7, assignment);
-        contentValues.put(col_8, final_mark);
+        contentValues.put(col_2, c.getName());
+        contentValues.put(col_3, c.getSurname());
+        contentValues.put(col_4, c.getEmail());
+        contentValues.put(col_5, c.getTest1());
+        contentValues.put(col_6, c.getTest2());
+        contentValues.put(col_7, c.getAssignment());
+        contentValues.put(col_8, c.getFinalMark());
+        contentValues.put(col_9, c.getPassword());
         long result = db.insert(STUDENTS, null, contentValues);
+
 
         if (result == -1)
             return false;
         else
             return true;
+
+    }
+
+    public String searchPass(String email){
+        myDb = this.getReadableDatabase();
+        String query = "select EMAIL, PASSWORD from " + STUDENTS;
+        Cursor cursor = myDb.rawQuery(query, null);
+        String a, b;
+        b = "Not found";
+
+        if(cursor.moveToFirst()){
+            do{
+                a = cursor.getString(0);
+
+                if(a.equals(email)){
+                    b = cursor.getString(1);
+                    break;
+                }
+
+            }
+            while(cursor.moveToNext());
+        }
+        return b;
+
 
     }
 
@@ -97,5 +127,27 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             }
             return col;
 
+    }
+
+    public boolean updateRecord( String id, String name, String surname, String email, String test1, String test2, String assignment, String finalMark){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(col_1,id);
+        contentValues.put(col_2,name);
+        contentValues.put(col_3,surname);
+        contentValues.put(col_4,email);
+        contentValues.put(col_5,test1);
+        contentValues.put(col_6,test2);
+        contentValues.put(col_7,assignment);
+        contentValues.put(col_8,finalMark);
+        db.update(STUDENTS, contentValues, "ID=?",new String[]{ id });
+
+        return true;
+
+    }
+
+    public Integer deleteRecord(String id){
+        SQLiteDatabase db = this.getWritableDatabase();
+         return db.delete(STUDENTS, "ID = ?", new String[]{id});
     }
 }

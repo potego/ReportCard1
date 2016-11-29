@@ -5,6 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="20dp"
+    android:background="@drawable/coder3"
     tools:context="com.example.admin.reportcard.Register">
 
    <!-- <Android.support.v7.widget.Toolbar
@@ -18,7 +20,10 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Students Registration"/>
+        android:text="Students Registration"
+        android:textAllCaps="true"
+        android:textSize="20sp"
+        android:layout_gravity="center_horizontal"/>
 
 
     <LinearLayout
@@ -28,7 +33,7 @@
 
         <TextView
 
-            android:layout_width="match_parent"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:text="Name"/>
 
@@ -48,7 +53,7 @@
 
         <TextView
 
-            android:layout_width="match_parent"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:text="Surname"/>
 
@@ -68,7 +73,7 @@
 
         <TextView
 
-            android:layout_width="match_parent"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:text="Email"/>
 
@@ -76,7 +81,7 @@
             android:id="@+id/email_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="e.g. JohnDoe@segageCorp.co.za"/>
+            android:hint="e.g. jdoe@segageCorp.co.za"/>
 
     </LinearLayout>
 
@@ -88,7 +93,51 @@
 
         <TextView
 
-            android:layout_width="match_parent"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:text="Password"/>
+
+        <EditText
+            android:id="@+id/password_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="e.g. pAsword@123"
+            android:inputType="textPassword"/>
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:text="Confirm Password"/>
+
+        <EditText
+            android:id="@+id/confirm_password_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="e.g. pAsword@123"
+            android:inputType="textPassword"
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:text="Test 1"/>
 
@@ -108,7 +157,7 @@
 
         <TextView
 
-            android:layout_width="match_parent"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:text="Test 2"/>
 
@@ -128,7 +177,7 @@
 
         <TextView
 
-            android:layout_width="match_parent"
+            android:layout_width="90dp"
             android:layout_height="wrap_content"
             android:text="Assignment"/>
 
@@ -148,7 +197,7 @@
 
         <TextView
 
-            android:layout_width="match_parent"
+            android:layout_width="90dp"
             android:layout_height="wrap_content"
             android:text="Final Mark"/>
 
@@ -160,13 +209,13 @@
 
     </LinearLayout>
 
-
     <Button
         android:id="@+id/reg_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="Register"
-        android:text="Register Student"/>
+        android:text="Register Student"
+        android:layout_gravity="center_horizontal"/>
 
 
 

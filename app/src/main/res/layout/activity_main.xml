@@ -7,77 +7,97 @@
     android:orientation="vertical"
     tools:context="com.example.admin.reportcard.MainActivity">
 
-    <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@drawable/ul_logo"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PERL UNIVERSITY"
+        android:layout_margin="2dp"
+        android:layout_marginTop="150dp"
+        android:textAllCaps="true"
+        android:textColor="#7F44BD"
+        android:textSize="32sp"
         android:layout_gravity="center_horizontal"/>
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Username"
-        android:textColor="#F5B041"
-        android:textAllCaps="true"
-        android:gravity="center_horizontal"
-        android:padding="10dp"
-        android:textSize="25sp"/>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="e.g johndoe@gmail.co.za"
-        android:gravity="center_horizontal"
-        android:padding="10dp"
-        android:textSize="25sp"
-        />
-
-    <TextView
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/password"
-        android:textColor="#F5B041"
-        android:textAllCaps="true"
-        android:gravity="center_horizontal"
-        android:padding="10dp"
-        android:textSize="25sp"
-        />
-
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="e.g abcd.123*@2016"
-        android:textColor="#F5B041"
-        android:textAllCaps="true"
-        android:gravity="center_horizontal"
-        android:padding="10dp"
-        android:textSize="25sp"
-        />
-
-    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login"
-        android:layout_margin="2dp"
+        android:text="A new world of programming unlocked"
+        android:textSize="20sp"
+        android:textColor="#7F44BD"
+        android:layout_gravity="center_horizontal"/>
+
+
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="200dp"
+        android:src="@drawable/logo5"
+        android:layout_gravity="center_horizontal"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:id="@+id/username_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:textColor="#7F44BD"
+            android:textSize="20sp"
+           />
+        
+        <EditText
+            android:id="@+id/username_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="johndoe@sCorp.co.za"
+            android:textSize="20sp"
+            android:paddingLeft="15dp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp">
+
+        <TextView
+            android:id="@+id/password_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Password"
+            android:textColor="#7F44BD"
+            android:textSize="20sp"
+            />
+
+        <EditText
+            android:id="@+id/password_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="**********"
+            android:inputType="textPassword"
+            android:textSize="20sp"
+            android:paddingLeft="15dp"
+            />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/login_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login..."
+        android:layout_marginTop="30dp"
         android:textAllCaps="true"
         android:onClick="login"
+        android:textColor="#7F44BD"
         android:layout_gravity="center_horizontal"
         android:padding="15dp"
 
         android:textSize="25sp"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="forgot Password?"
-        android:layout_margin="2dp"
-        android:textAllCaps="false"
-        android:background="@null"
-        android:onClick="Forgot_Password"
-        android:layout_gravity="center_horizontal"
-        android:textSize="15sp"/>
 
 </LinearLayout>

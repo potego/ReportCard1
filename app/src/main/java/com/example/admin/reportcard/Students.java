@@ -38,15 +38,8 @@ public class Students extends Activity implements AdapterView.OnItemClickListene
         allStudents = (ListView) findViewById(R.id.allStudentsView);
         myCursor = myDb.getAllData();
         System.out.println(myCursor.getCount());
-//        for (int i = 0; i < myCursor.getCount(); i++) {
-//            System.out.println((myCursor.getString(myCursor.getColumnIndex("NAME"))));
-//            String name = myCursor.getString(myCursor.getColumnIndex("NAME"));
-//            nameList.add(myCursor.getString(myCursor.getColumnIndex("NAME")));
-//
-//        }
 
 
-//
         if(myCursor.moveToFirst())
         {
             do{
@@ -57,43 +50,7 @@ public class Students extends Activity implements AdapterView.OnItemClickListene
         allStudents.setAdapter(listAdapter);
         allStudents.setOnItemClickListener(this);
 
-       // AllStudents();
     }
-
-
-//    @Override
-//    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//
-//    }
-
-//    public void AllStudents(){
-//
-//
-//        btnViewStudents.setOnClickListener(
-//                new View.OnClickListener(){
-//                    @Override
-//                    public void onClick(View v){
-//                       Cursor results =  myDb.getAllData();
-//                        if(results.getCount() == 0){
-//                            //show messages on screen
-//                            showMessage("Error", "There is nothing to display");
-//                            return;
-//                        }
-//
-//                        StringBuffer buffer = new StringBuffer();
-//                        while(results.moveToNext()){
-//                            buffer.append("Id : " + results.getString(0) + "\n");
-//                            buffer.append("Name : " + results.getString(1) + "\n");
-//                            buffer.append("Email : " + results.getString(2) + "\n");
-//                            buffer.append("Marks : " + results.getString(3) + "\n\n");
-//                        }
-//                        //Methods that displays all  data
-//                        showMessage("Data",buffer.toString());
-//
-//                    }
-//                }
-//        );
-//    }
 
     public void showMessage(String title, String message) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
